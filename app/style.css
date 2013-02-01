@@ -1,0 +1,247 @@
+#loginPage,#chatMessagesPage,#friendsListPage{
+	display:none;
+}
+body{
+	background:black;
+	 color:white;
+ font-size:15px;
+ font-family:arial;
+}
+div{
+	border: solid 3px gray;
+	
+}
+.chatbox{
+  border:1px solid #bbb;
+  width:230px;
+  padding:0; /* 10px 10px 10px ;*/
+  margin-top:5px;
+  margin-left:10px;
+  float:right;
+  background:#fff;
+  
+  }
+ .chatTextArea{
+  border:1px solid #bbb;
+  margin-top:10px;
+ }
+  
+ .closeButton{
+  color:#fff;
+  float:right; 
+  cursor:pointer;
+  padding:2px 4px;
+  font-weight:bold;
+ }
+ p.headerMessage{
+  line-height: 100%;
+  padding:1px  0;
+  height:1em;
+ }
+ #messageCont{
+  padding-left:5px;
+  height:97%;
+  width:86.9%;
+  overflow:auto; 
+  float:left;
+  color:white;
+  
+ }
+ .system{
+ color: #cc9900; 
+ }
+ #messageCont a{
+ color:white;
+ font-size:15px;
+ font-family:arial;
+ }
+  .userColor{
+ color:#66cccc;
+ 
+ }
+ .selfMessage{
+ 
+ color:#9955dd;
+ }
+ #FriendList{
+ width:12%;
+ float:right;
+ height:97%;
+ text-align:left;
+ overflow:auto;
+ 
+ }
+ #FriendList div{
+ border:0px; 
+ }
+ #FriendList a{
+ 	color:#ffee88;
+ 	border:0px;
+ 	margin-left:3px; 	
+ 	text-align:center;
+ 	margin-top:10px;
+ 	
+ 	
+ 
+ }
+ #messageCont p {
+ 	padding : 0 0 0 0;
+ 	margin : 0 0 0 0 ;
+ 
+ }
+  #messageCont div {
+ 	padding : 0 0 0 0;
+ 	margin : 0 0 0 0 ;
+ 	border: 0px;
+ 
+ }
+ 
+ #chats{
+  position:fixed;
+  bottom:2%;
+  right:2%;
+  border:0px;
+  height:300px; 
+  background:transparent;    
+ }
+ 
+ .headerContainer{
+  padding:4px;
+  background:#357EC7;
+   color:#fff;
+ }
+ #messageBox{
+ width:100%;
+ height:20px;
+ }
+  #AudioPlayer div{
+  	border:none;
+  }
+ #AudioPlayer{
+ 	width:500px;
+ 	height:auto;
+ 	 border:none;
+ 	 background:#FFFFFF;
+ 	 position:absolute; 
+ 	 visibility:hidden;	 
+ }
+
+#AudioPlayer #CurrentSong{
+ 	width:100%;
+ 	height:auto; 	
+ 	 background:#ffffff;
+ 	
+ 	 border:0px;
+
+ 	 margin:2px 0px 0px 0px;
+ }
+  .duration{
+ 	width:40px;
+ 	
+ 	color:#000000;	
+ 	 background:#ffffff;
+ 	font-size:10px;
+ 	 
+ 	 float:left;
+ 	 
+ }
+#ProgressBar{
+	width:300px;
+	height:5px;
+	background:#D0D0D0;
+	cursor:pointer;
+    position:absolute;
+
+}
+.song{
+	width:303px;
+	height:24px;
+	float:left;
+	vertical-align:middle;
+	margin-top:3px;
+}
+.songTitle{
+    margin-top:5px;
+	font-size:10px;
+	color:#000000;
+	
+}
+.playButton{
+	width:24px;
+	height:24px;
+	float:left;	
+}
+.nextButton{
+	width:24px;
+	height:24px;
+	float:left;	
+}
+.prevButton{
+	width:24px;
+	height:24px;
+	float:left;	
+}
+#soundControl{
+	float:left;
+	width:5px;
+	height:24px;
+	margin-top:3px;
+	
+}
+#soundBar{	
+	position:absolute;
+	width:5px;
+	height:24px;
+	background:#D0D0D0;
+	cursor:pointer;
+}
+.progess_front_line{
+	width:0%;
+	height:100%;
+	background:#000000;
+}
+#playList{
+	width:100%;
+	
+	  overflow:auto;
+	  height:246px;
+	
+}
+.playListSong{
+	width:100%;
+	height:27px;
+	
+	
+}
+#dragElement{
+	width:100%;
+	height:10px;
+	background:#D0D0D0;	
+	cursor:pointer;	
+}
+#randomizeButton{
+	margin-left:6px;
+	opacity:0.4;
+	
+	
+}
+.ui-slider-range-min{
+    height:5px;
+    background:#000000;
+}
+.ui-slider-handle{
+    position: absolute;
+    height: 5px;
+    top:-1px;
+    width:5px;
+    border:solid 1px #000000;
+    background: #FFFFFF;
+    z-index: 2;
+    cursor: default;
+}
+#tabs-2{
+	height:246px;
+}
+#ui_holder{
+	height:24px
+}

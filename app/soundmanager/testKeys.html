@@ -1,0 +1,37 @@
+<html>
+<head>
+<script>
+controllPressed = false;
+function keyPressed(event){
+	if(event.keyCode == 13){
+		sendMessage();
+	}
+	if(event.keyCode == 39){
+		if(controllPressed){
+		playNext();
+		}
+	}
+	if(event.keyCode == 37){
+		if(controllPressed){
+		playPrev();
+		}
+	}
+	if(event.keyCode == 17){
+		controllPressed = true;		
+	}
+	
+}
+function keyReleased(event){
+	if(event.keyCode == 17){
+		controllPressed = false;		
+	}
+	
+}		
+</script>	
+</head>
+<body >
+
+	<textarea id='messageBox' onkeydown="keyPressed(event)" onkeyup="keyReleased(event)"></textarea>
+  
+</body>
+</html>

@@ -1,0 +1,111 @@
+<html>
+<head>
+<script language="javascript" src='http://code.jquery.com/jquery.min.js'></script>
+	
+	<link type="text/css" rel="stylesheet" href="jquery-ui-1.10.0.custom.min.css" />
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<link type="text/css" rel="stylesheet" href="jquery.jui_dropdown.css" />
+	<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />-->
+  
+	<script src="soundmanager/soundmanager2-nodebug-jsmin.js" ></script>
+	<script src="soundmanager/music_js.js" ></script>
+	<script language="javascript" type="text/javascript" src="settings.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery.ui.tabs.css" />
+	<script src="jquery.jui_dropdown.min.js"></script>
+	
+</script>
+
+</head>
+<body >
+
+		<div id="vk_api_transport" style="position: absolute; top: -10000px;"></div>
+		<script type="text/javascript">
+
+
+var current = {"song":"","pos":0};
+           window.vkAsyncInit = function() {
+		 
+        VK.Observer.subscribe('auth.login', function(response) {		
+          loginOpenAPI();
+        });
+        VK.Observer.subscribe('auth.logout', function() {
+          console.log('logout');
+        });
+        VK.Observer.subscribe('auth.statusChange', function(response) {		 
+          console.log('statusChange');
+        });
+        VK.Observer.subscribe('auth.sessionChange', function(r) {
+          console.log('sessionChange');
+        });
+        VK.init({        	
+         apiId: 3271869		 //spell talking
+        //apiId:3268354	//local host on port 8080
+        });	 
+        console.debug("initi done");
+       doLogin();
+        var abc = document.getElementById("AudioPlayer");
+		abc.style.visibility ='visible';
+      };
+ 
+      setTimeout(function() {
+        var el = document.createElement('script');
+        el.type = 'text/javascript';
+        el.src = 'http://vkontakte.ru/js/api/openapi.js?3';
+        el.async = true;
+        document.getElementById('vk_api_transport').appendChild(el);
+      }, 0);
+      
+     
+    	</script>
+		
+		 <div id="AudioPlayer">
+		 <div id="ui_holder" >
+		 </div>
+<div id="opt_selected">
+    <span>Selected: </span><span id="result"></span>
+</div>
+
+
+<div id="demo_drop1">
+    <div id="launcher1_container">
+        <button id="launcher1">Select an action</button>
+    </div>
+    <ul id="menu1">
+        <li id="opt_1.1"><a href="javascript:void(0);">Option-1.1</a></li>        
+        <li id="opt_1.2"><a href="javascript:void(0);"><img
+                src="images/feed.png"
+                style="margin-right: 3px; margin-bottom: -2px; border: 0">Option-1.2</a></li>
+        <li id="opt_1.3"><a href="javascript:void(0);"><img
+                src="images/feed_edit.png"
+                style="margin-right: 3px; margin-bottom: -2px; border: 0">Option-1.3</a>
+        </li>
+        <li id="opt_1.4"><a href="javascript:void(0);"><img
+                src="images/feed_delete.png"
+                style="margin-right: 3px; margin-bottom: -2px; border: 0">Option-1.4
+           
+        </a></li>
+        
+    </ul>
+</div>
+		<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Music</a></li>
+    <li><a href="#tabs-2">Misuc Search</a></li>    
+  </ul>
+  <div id="tabs-1">
+   
+<!--  <div id='dragElement' ondblclick='playlistShow()'></div> -->
+
+
+ </div>
+   <div id="tabs-2">
+   
+<!--  <div id='dragElement' ondblclick='playlistShow()'></div> -->
+
+
+ </div>
+</div>
+</div>
+</body>
+</html>

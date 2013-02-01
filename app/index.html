@@ -1,53 +1,77 @@
-<script src="/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script>
-	var socket = io.connect('http://spelltalking-guky.dotcloud.com/');
+  <head>
+  	
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hello App Engine</title>
+	<script language="javascript" src='jquery-1.8.2.min.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script language="javascript" src='AjaxUtil.js'></script>
 
-	// on connection to server, ask for user's name with an anonymous callback
-	socket.on('connect', function(){
-		// call the server-side function 'adduser' and send one parameter (value of prompt)
-		socket.emit('adduser', prompt("What's your name?"));
-	});
+	<!--[if (!IE)]><!-->
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<!--<![endif]-->
+	
+	
+	<script language="javascript" type="text/javascript" src="settings.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script>
+	
 
-	// listener, whenever the server emits 'updatechat', this updates the chat body
-	socket.on('updatechat', function (username, data) {
-		$('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
-	});
-
-	// listener, whenever the server emits 'updateusers', this updates the username list
-	socket.on('updateusers', function(data) {
-		$('#users').empty();
-		$.each(data, function(key, value) {
-			$('#users').append('<div>' + key + '</div>');
-		});
-	});
-
-	// on load of page
-	$(function(){
-		// when the client clicks SEND
-		$('#datasend').click( function() {
-			var message = $('#data').val();
-			$('#data').val('');
-			// tell server to execute 'sendchat' and send along one parameter
-			socket.emit('sendchat', message);
-		});
-
-		// when the client hits ENTER on their keyboard
-		$('#data').keypress(function(e) {
-			if(e.which == 13) {
-				$(this).blur();
-				$('#datasend').focus().click();
-			}
-		});
-	});
 
 </script>
-<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
-	<b>USERS</b>
-	<div id="users"></div>
-</div>
-<div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
-	<div id="conversation"></div>
-	<input id="data" style="width:200px;" />
-	<input type="button" id="datasend" value="send" />
-</div>
+  </head>
+
+  <body onkeydown="keyPressed(event)" onkeyup="keyReleased(event)">
+<div id="vk_api_transport" style="position: absolute; top: -10000px;"></div>
+		<script type="text/javascript">
+
+
+var current = {"song":"","pos":0};
+           window.vkAsyncInit = function() {
+		 
+        VK.Observer.subscribe('auth.login', function(response) {		
+          loginOpenAPI();
+        });
+        VK.Observer.subscribe('auth.logout', function() {
+          console.log('logout');
+        });
+        VK.Observer.subscribe('auth.statusChange', function(response) {		 
+          console.log('statusChange');
+        });
+        VK.Observer.subscribe('auth.sessionChange', function(r) {
+          console.log('sessionChange');
+        });
+        VK.init({        	
+         apiId: 3271869		 //spell talking
+        //apiId:3268354	//local host on port 8080
+        });	 
+        console.debug("initi done");
+       doLogin();        
+      };
+ 
+      setTimeout(function() {
+        var el = document.createElement('script');
+        el.type = 'text/javascript';
+        el.src = 'http://vkontakte.ru/js/api/openapi.js?3';
+        el.async = true;
+        document.getElementById('vk_api_transport').appendChild(el);
+      }, 0);
+      
+     
+    	</script>
+    
+       
+      	<audio id="msg_sound" preload>
+    	<source src="msg.wav" />
+		</audio>
+        <div id ='FriendList'><div></div></div>
+        <div id = "messageCont"><div></div>
+            <div id="userid"></div>
+
+        </div>
+      
+      
+       <div style="font-weight:bold;"><textarea id='messageBox'></textarea></div>
+      
+    
+  
+  </body>
