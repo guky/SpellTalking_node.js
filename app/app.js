@@ -25,6 +25,7 @@ app.get('/*', function (req, res) {
 // usernames which are currently connected to the chat
 var usernames = {};
 
+
 io.sockets.on('connection', function (socket) {
 	
 	// when the client emits 'sendchat', this listens and executes	
